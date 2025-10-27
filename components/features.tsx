@@ -67,8 +67,8 @@ export function Features() {
   return (
     <section id="features" className="relative py-16 px-4 overflow-hidden">
       {/* Floating gradient circles */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#FF69B4] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-300" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-[#7B68EE]/20 dark:bg-[#7B68EE]/10 rounded-full filter blur-3xl animate-float" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#FF69B4]/20 dark:bg-[#FF69B4]/10 rounded-full filter blur-3xl animate-float animation-delay-300" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}

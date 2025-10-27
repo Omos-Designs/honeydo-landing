@@ -74,9 +74,9 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-start overflow-hidden px-4 py-4 pb-12">
       {/* Floating gradient circles */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#4A90E2] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float" />
-      <div className="absolute top-40 right-10 w-72 h-72 bg-[#FF69B4] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-300" />
-      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-500" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#4A90E2]/20 dark:bg-[#4A90E2]/10 rounded-full filter blur-3xl animate-float" />
+      <div className="absolute top-40 right-10 w-72 h-72 bg-[#FF69B4]/20 dark:bg-[#FF69B4]/10 rounded-full filter blur-3xl animate-float animation-delay-300" />
+      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-[#7B68EE]/20 dark:bg-[#7B68EE]/10 rounded-full filter blur-3xl animate-float animation-delay-500" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto mt-8">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
