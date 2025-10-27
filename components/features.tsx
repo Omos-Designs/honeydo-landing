@@ -65,8 +65,12 @@ export function Features() {
   }, [])
 
   return (
-    <section id="features" className="py-16 px-4 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="relative py-16 px-4 overflow-hidden">
+      {/* Floating gradient circles */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#FF69B4] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-300" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance">Features that make chores fun</h2>

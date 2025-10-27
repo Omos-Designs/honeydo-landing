@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.className} antialiased`}>
+      <body className={`${plusJakartaSans.className} antialiased relative`}>
+        {/* Global gradient background */}
+        <div className="fixed inset-0 bg-gradient-to-br from-[#4A90E2] via-[#7B68EE] to-[#FF69B4] opacity-10 -z-10" />
         {children}
         <Analytics />
       </body>

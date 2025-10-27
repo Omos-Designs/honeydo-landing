@@ -54,8 +54,12 @@ export function PerfectFor() {
   }, [])
 
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-4 overflow-hidden">
+      {/* Floating gradient circles */}
+      <div className="absolute top-40 left-10 w-72 h-72 bg-[#4A90E2] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-500" />
+      <div className="absolute bottom-40 right-10 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-4 text-balance">Perfect for</h2>

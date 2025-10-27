@@ -20,12 +20,18 @@ export function Hero() {
     setLoading(true)
 
     try {
-      // Google Form submission endpoint
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScplZkJjN3HFF6aKsFPvhlVRFbaguMCawyUy8-GK79eYPNSTw/formResponse"
+      // Google Form submission endpoint from environment variables
+      const formUrl = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL
+      const entryId = process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID
+
+      if (!formUrl || !entryId) {
+        console.error("Google Form configuration missing")
+        throw new Error("Form configuration error")
+      }
 
       // Create form data with the email entry
       const formData = new FormData()
-      formData.append("entry.1118412453", email)
+      formData.append(entryId, email)
 
       // Submit to Google Forms (no-cors mode to avoid CORS issues)
       await fetch(formUrl, {
@@ -67,12 +73,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-start overflow-hidden px-4 py-4 pb-12">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#4A90E2] via-[#7B68EE] to-[#FF69B4] opacity-10" />
-
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#4A90E2] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" />
-      <div className="absolute top-40 right-10 w-72 h-72 bg-[#FF69B4] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animation-delay-300" />
-      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animation-delay-500" />
+      {/* Floating gradient circles */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#4A90E2] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float" />
+      <div className="absolute top-40 right-10 w-72 h-72 bg-[#FF69B4] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-300" />
+      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-[#7B68EE] rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-20 dark:opacity-10 animate-float animation-delay-500" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto mt-8">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -152,7 +156,7 @@ export function Hero() {
 
           {/* Mobile & Desktop - Carousel */}
           <div className="w-full flex flex-col justify-start animate-fade-in-up animation-delay-300 mt-8 lg:mt-0">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center">See it in action</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-0 text-center">See it in action</h3>
             <Carousel items={cards} />
           </div>
         </div>
