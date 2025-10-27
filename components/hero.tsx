@@ -57,17 +57,17 @@ export function Hero() {
     {
       category: "Dashboard",
       title: "Competition Dashboard",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CleanShot%202025-10-26%20at%2013.28.18%402x-qlc92zHDP6n31TzJQpKDDN7JbU5iUq.png",
+      src: "/dashboard-screenshot.png",
     },
     {
       category: "Tasks",
       title: "Task Management",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CleanShot%202025-10-26%20at%2013.31.24%402x-39u7h4GYUInltOwvQ9rc7i5jEUElHH.png",
+      src: "/tasks-screenshot.png",
     },
     {
       category: "Profile",
       title: "Profile & Settings",
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CleanShot%202025-10-26%20at%2013.31.56%402x-pMzKak1sVwOZ5pthvlv7ftGqQ4HqB5.png",
+      src: "/profile-screenshot.png",
     },
   ].map((card, index) => <Card key={card.src} card={card} index={index} />)
 
